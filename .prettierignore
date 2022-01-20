@@ -1,0 +1,8 @@
+# Ignore artifacts:
+.next
+build
+node_modules
+
+yarn.lock
+next-env.d.ts
+next.config.js
