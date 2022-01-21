@@ -4,7 +4,8 @@ export const Container = styled.div`
 	padding: 0 2rem;
 `;
 export const Main = styled.div`
-	min-height: 100vh;
+	height: 80vh;
+
 	padding: 4rem 0;
 	flex: 1;
 	display: flex;
@@ -14,8 +15,9 @@ export const Main = styled.div`
 `;
 export const Footer = styled.div`
 	display: flex;
+
 	flex: 1;
-	padding: 2rem 0;
+	padding: 1rem 0;
 	border-top: 1px solid #eaeaea;
 	justify-content: center;
 	align-items: center;

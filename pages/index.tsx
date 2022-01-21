@@ -12,7 +12,6 @@ const Home: NextPage = () => {
 				Welcome to BReini Best Budget App
 				<p>Time to get your expenses under control!</p>
 			</S.Main>
-
 			<S.Footer>
 				<a href="https://odedo.dev" target="_blank" rel="noopener noreferrer">
 					Odedindi
