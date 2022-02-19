@@ -3,26 +3,22 @@ import styled, { css } from 'styled-components';
 export const Nav = styled.nav`
 	display: flex;
 	padding: 1rem 2rem;
-	align-items: center;
-	justify-content: space-around;
+	align-items: baseline;
+	justify-content: space-between;
+	height: 100%;
 `;
 const Side = styled.div<{ loading: boolean }>``;
 export const Left = styled(Side)`
 	${({ loading }) =>
 		loading
 			? css`
-					.bold {
-						font-weight: bold;
-					}
-
 					a {
 						text-decoration: none;
-						color: #000;
 						display: inline-block;
 					}
 
 					.left a[data-active='true'] {
-						color: gray;
+						font-weight: bold;
 					}
 
 					a + a {
@@ -30,18 +26,13 @@ export const Left = styled(Side)`
 					}
 			  `
 			: css`
-					.bold {
-						font-weight: bold;
-					}
-
 					a {
 						text-decoration: none;
-						color: #000;
 						display: inline-block;
 					}
 
 					.left a[data-active='true'] {
-						color: gray;
+						font-weight: bold;
 					}
 
 					a + a {
@@ -61,7 +52,6 @@ export const Right = styled(Side)`
 			: css`
 					a {
 						text-decoration: none;
-						color: #000;
 						display: inline-block;
 					}
 

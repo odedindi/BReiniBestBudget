@@ -1,8 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+
 html,
 body {
+  width: 100%; 
+
+height:100%;
+
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -11,6 +16,8 @@ body {
 body {
   background-color: ${({ theme }) => theme?.colors?.body}; 
   color: ${({ theme }) => theme.colors.text};   
+
+  overflow: hidden;
 }
 
 a {

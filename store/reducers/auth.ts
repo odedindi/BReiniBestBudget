@@ -2,15 +2,8 @@ import { auth } from 'store/actionTypes';
 
 const authInitState: any = {};
 
-export const authReducer = (state = authInitState, action: any) => {
-	switch (action.type) {
-		case auth.LOGIN:
-			return {
-				id: action.payload,
-			};
-		case auth.LOGOUT:
-			return {};
-		default:
-			return state;
-	}
+export const authReducer = (state = authInitState, { payload, type }: any) => {
+	if (type === auth.LOGIN) return { id: payload };
+	if (type === auth.LOGOUT) return {};
+	return state;
 };

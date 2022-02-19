@@ -11,9 +11,8 @@ export const auth = {
 
 export const expenses = {
 	ADD: 'ADD_EXPENSE',
-	EDIT: 'EDIT_EXPENSE',
 	REMOVE: 'REMOVE_EXPENSE',
-	SET: 'SET_EXPENSES',
+	UPDATE: 'UPDATE_EXPENSE',
 };
 
 export const filters = {

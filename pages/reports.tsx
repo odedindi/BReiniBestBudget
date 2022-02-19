@@ -1,29 +1,21 @@
 import * as React from 'react';
 import type { NextPage } from 'next';
-import * as S from 'styles/Home';
-import styled from 'styled-components';
-// import MyNavbar from 'components/Navbar';
+
 import Spinner from 'components/Spinner';
 
 import gsap from 'gsap';
 
 import Carousel from 'components/Carousel';
 
-import {
-	ActionIcon,
-	Anchor,
-	Center,
-	useMantineColorScheme,
-} from '@mantine/core';
-
 import Layout from 'components/Layout';
 
-const Home: NextPage = () => {
+const Reports: NextPage = () => {
 	return (
 		<Layout>
+			<h1>Reports</h1>
 			<Spinner />
 		</Layout>
 	);
 };
 
-export default Home;
+export default Reports;

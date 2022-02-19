@@ -9,6 +9,14 @@
 		"format": "prettier --write . "
 	},
 	"dependencies": {
+		"@mantine/core": "^3.6.9",
+		"@mantine/dates": "^3.6.9",
+		"@mantine/dropzone": "^3.6.9",
+		"@mantine/hooks": "^3.6.9",
+		"@mantine/modals": "^3.6.9",
+		"@mantine/next": "^3.6.9",
+		"@mantine/notifications": "^3.6.9",
+		"@modulz/radix-icons": "^4.0.0",
 		"@react-rxjs/core": "^0.8.4",
 		"@react-rxjs/utils": "^0.9.3",
 		"@styled-icons/boxicons-logos": "^10.38.0",
@@ -16,6 +24,8 @@
 		"@styled-icons/boxicons-solid": "^10.38.0",
 		"d3": "^7.2.1",
 		"d3-selection": "^3.0.0",
+		"dayjs": "^1.10.7",
+		"gsap": "^3.9.1",
 		"immutable": "^4.0.0",
 		"moment": "^2.29.1",
 		"next": "12.0.7",
@@ -31,10 +41,10 @@
 		"redux-immutable": "^4.0.0",
 		"redux-observable": "^2.0.0",
 		"redux-thunk": "^2.4.1",
+		"reselect": "^4.1.5",
 		"rxjs": "^7.4.0",
 		"styled-components": "^5.3.3",
 		"typesafe-actions": "^5.1.0",
-		"use-dark-mode": "^2.3.1",
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {

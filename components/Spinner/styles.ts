@@ -31,3 +31,9 @@ export const Spinner = styled(LoaderCircle)`
 	width: 3rem;
 	height: 3rem;
 `;
+
+export const Container = styled.span`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+`;

@@ -13,22 +13,7 @@ export const Main = styled.div`
 	justify-content: center;
 	align-items: center;
 `;
-export const Footer = styled.div`
-	display: flex;
 
-	flex: 1;
-	padding: 1rem 0;
-	border-top: 1px solid #eaeaea;
-	justify-content: center;
-	align-items: center;
-
-	a {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-grow: 1;
-	}
-`;
 export const Title = styled.h1`
 	margin: 0;
 	line-height: 1.15;

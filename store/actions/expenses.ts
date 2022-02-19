@@ -1,3 +1,4 @@
+import { normalizeExpense } from 'store/reducers/expnses';
 import * as actionTypes from '../actionTypes';
 
 // expenses
@@ -12,7 +13,7 @@ export const removeExpense = (id: string) => ({
 });
 
 export const editExpense = (id: string, updates: Partial<Expense>) => ({
-	type: actionTypes.expenses.EDIT,
+	type: actionTypes.expenses.UPDATE,
 	payload: { id, updates },
 });
 
@@ -20,3 +21,23 @@ export const setExpenses = (expenses: Expense[]) => ({
 	type: actionTypes.expenses.SET,
 	payload: expenses,
 });
+
+export const actions = {
+	addExpense:
+		(expense: UnindexedExpense) => (dispatch: Function, getState: Function) =>
+			dispatch({
+				type: actionTypes.expenses.ADD,
+				transaction: normalizeExpense(getState().expenses, expense),
+			}),
+
+	updateExpense: (expense: Expense) => (dispatch: Function) =>
+		dispatch({
+			type: actionTypes.expenses.UPDATE,
+			expense,
+		}),
+
+	removeExpense: (id: Expense['id']) => ({
+		type: actionTypes.expenses.REMOVE,
+		id,
+	}),
+};

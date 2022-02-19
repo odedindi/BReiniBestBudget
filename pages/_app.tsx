@@ -3,7 +3,7 @@ import Providers from 'providers';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
 	<Providers session={pageProps.session}>
-		<Component {...pageProps} />;
+		<Component {...pageProps} />
 	</Providers>
 );
 
