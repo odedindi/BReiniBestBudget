@@ -2,20 +2,19 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import * as S from 'styles/Home';
 
+import Layout from 'components/Layout';
+import { Text } from '@mantine/core';
+
 const FiveHundred: NextPage = () => {
 	return (
-		<S.Container>
-			<S.Main>Error </S.Main>
-			500:
-			<Link passHref href="/">
-				<a>Go home </a>
-			</Link>
-			<S.Footer>
-				<a href="https://odedo.dev" target="_blank" rel="noopener noreferrer">
-					Odedindi
-				</a>
-			</S.Footer>
-		</S.Container>
+		<Layout errorPage>
+			<S.Main>
+				<Text>Error 500:</Text>
+				<Link passHref href="/">
+					<Text component="a">Go home </Text>
+				</Link>
+			</S.Main>
+		</Layout>
 	);
 };
 

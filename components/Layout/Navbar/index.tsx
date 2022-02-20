@@ -7,6 +7,7 @@ import * as S from './styles';
 
 import {
 	Burger,
+	Container,
 	Header,
 	HeaderProps,
 	MediaQuery,
@@ -15,8 +16,17 @@ import {
 } from '@mantine/core';
 
 import { useOpened } from '../';
+import Logo from 'components/Logo';
+import BurgerMenuButton from 'components/BurgerMenuButton';
 
-const Navbar: React.FC<Omit<HeaderProps, 'children'>> = (props) => {
+type NavbarProps = {
+	errorPage?: true;
+};
+
+const Navbar: React.FC<NavbarProps & Omit<HeaderProps, 'children'>> = ({
+	errorPage,
+	...rest
+}) => {
 	const theme = useMantineTheme();
 
 	const { opened, toggleOpened } = useOpened();
@@ -28,26 +38,26 @@ const Navbar: React.FC<Omit<HeaderProps, 'children'>> = (props) => {
 	const isLoading = status === 'loading';
 
 	return (
-		<Header padding="md" {...props}>
+		<Header padding="md" {...rest}>
 			{/* Handle other responsive styles with MediaQuery component or createStyles function */}
 			<S.Nav>
 				<section
 					style={{ display: 'flex', alignItems: 'center', height: '100%' }}
 				>
-					<MediaQuery largerThan="md" styles={{ display: 'none' }}>
-						<Burger
-							title="Open navigation"
-							size="md"
-							mr="xl"
-							color={theme.colors.gray[7]}
-							opened={opened}
-							onClick={toggleOpened}
-						/>
-					</MediaQuery>
-
-					<Text>Breini&apos;s Best Budget App</Text>
+					<Container style={{ display: 'flex' }} size={250}>
+						{!errorPage && (
+							<MediaQuery largerThan="md" styles={{ display: 'none' }}>
+								<BurgerMenuButton
+									clickHandler={toggleOpened}
+									opened={opened}
+									title="Open navigation"
+								/>
+							</MediaQuery>
+						)}
+						<Logo />
+					</Container>
 				</section>
-				<S.Left loading={isLoading}>
+				<S.Left>
 					<Link passHref href="/">
 						<Text component="a" data-active={isActive('/')}>
 							Home
@@ -68,7 +78,7 @@ const Navbar: React.FC<Omit<HeaderProps, 'children'>> = (props) => {
 						</>
 					)}
 				</S.Left>
-				<S.Right loading={isLoading}>
+				<S.Right>
 					{isLoading ? (
 						<p>Validating session ...</p>
 					) : session ? (
@@ -81,8 +91,10 @@ const Navbar: React.FC<Omit<HeaderProps, 'children'>> = (props) => {
 							</Text>
 						</>
 					) : (
-						<Link href="/api/auth/signin">
-							<a data-active={isActive('/signup')}>Log in</a>
+						<Link passHref href="/api/auth/signin">
+							<Text component="a" data-active={isActive('/signup')}>
+								Log in
+							</Text>
 						</Link>
 					)}
 				</S.Right>

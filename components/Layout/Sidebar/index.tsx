@@ -17,11 +17,7 @@ export const Sidebar = (props: Omit<NavbarProps, 'children'>) => {
 
 	const { opened } = useOpened();
 	return (
-		<Navbar
-			hidden={!opened}
-			padding="xs"
-			{...props}
-		>
+		<Navbar hidden={!opened} padding="xs" {...props}>
 			<Navbar.Section>
 				First Section
 				<ActionIcon

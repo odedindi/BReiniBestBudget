@@ -4,8 +4,6 @@ import formatAmount from 'utils/formatAmount';
 
 import { getCategories } from './categories';
 
-
-
 const totalExpenses = (expenses: Expense[]): number =>
 	expenses.reduce<number>((total, { amount }) => total + amount, 0);
 

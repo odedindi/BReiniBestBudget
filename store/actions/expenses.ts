@@ -17,11 +17,6 @@ export const editExpense = (id: string, updates: Partial<Expense>) => ({
 	payload: { id, updates },
 });
 
-export const setExpenses = (expenses: Expense[]) => ({
-	type: actionTypes.expenses.SET,
-	payload: expenses,
-});
-
 export const actions = {
 	addExpense:
 		(expense: UnindexedExpense) => (dispatch: Function, getState: Function) =>

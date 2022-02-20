@@ -6,20 +6,26 @@ import MainNavbar from './Navbar';
 import Sidebar from './Sidebar';
 import Footer from './Footer';
 
-export const Layout: React.FC = ({ children }) => {
+type LayoutProps = {
+	errorPage?: true;
+};
+
+export const Layout: React.FC<LayoutProps> = ({ children, errorPage }) => {
 	return (
 		<SidebarOpenedContextProvider>
 			<AppShell
 				navbarOffsetBreakpoint="sm"
 				fixed
 				navbar={
-					<Sidebar
-						height={'100%'}
-						hiddenBreakpoint="md"
-						width={{ base: 100, lg: 300, sm: '100%' }}
-					/>
+					errorPage ? undefined : (
+						<Sidebar
+							height={'100%'}
+							hiddenBreakpoint="md"
+							width={{ base: 100, lg: 300, sm: '100%' }}
+						/>
+					)
 				}
-				header={<MainNavbar height={100} />}
+				header={<MainNavbar height={100} errorPage={errorPage} />}
 			>
 				<div style={{ flex: 1, minHeight: '95%' }}>{children}</div>
 				<Footer />
