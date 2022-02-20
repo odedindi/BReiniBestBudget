@@ -1,7 +1,8 @@
-import { ScaleLinear } from 'd3';
 import * as React from 'react';
 
-import { Rect } from './';
+import { ScaleLinear } from 'd3';
+
+import { Rect } from '.';
 
 type BarProps = {
 	yScale: ScaleLinear<number, number>;

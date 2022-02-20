@@ -14,7 +14,8 @@ import {
 
 import { shuffleArray } from 'utils/shuffleArray';
 
-import { Chart, Legend, Bar, XAxis } from './';
+import { Bar, XAxis } from '.';
+import { Chart, Legend } from '..';
 
 const outflowScheme = shuffleArray([
 	...schemeCategory10.slice(0, 2),
@@ -39,13 +40,13 @@ type StackedChartProps = {
 };
 
 export const StackedChart: React.FC<StackedChartProps> = ({
-	width = 300,
-	height = 500,
+	data,
 	dataAmount = 'amount',
 	dataLabel,
 	dataKey,
-	data,
+	height = 500,
 	totals,
+	width = 300,
 }) => {
 	const dataKeys = React.useRef<string[]>([]);
 	const xScale = React.useRef<ScaleBand<number>>(undefined!);

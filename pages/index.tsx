@@ -17,7 +17,7 @@ import {
 } from '@mantine/core';
 
 import Layout from 'components/Layout';
-
+import { DataSelect } from 'components/DataSelect';
 const Home: NextPage = () => {
 	return (
 		<Layout>

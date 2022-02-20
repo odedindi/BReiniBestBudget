@@ -1,7 +1,7 @@
 import Chart from './Chart';
-import Bar from './Bar';
 import Legend from './Legend';
-import Rect from './Rect';
-import StackedChart from './StackedChart';
-import XAxis from './XAxis';
-export { Chart, Bar, Legend, Rect, StackedChart, XAxis };
+
+import { DonatChart, Path } from './DonatChart';
+import { Bar, Rect, StackedChart, XAxis } from './StackedChart';
+
+export { Bar, Chart, DonatChart, Legend, Path, Rect, StackedChart, XAxis };

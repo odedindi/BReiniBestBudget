@@ -1,39 +1,42 @@
 import styled, { keyframes } from 'styled-components';
-import { LoaderCircle } from '@styled-icons/boxicons-regular/LoaderCircle';
-
-export const VisuallyHidden = styled.span`
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important;
-	height: 1px !important;
-	overflow: hidden !important;
-	padding-top: 0 !important;
-	padding-right: 0 !important;
-	padding-bottom: 0 !important;
-	padding-left: 0 !important;
-	position: absolute !important;
-	white-space: nowrap !important;
-	width: 1px !important;
-`;
-
-const rotate = keyframes`
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-`;
-
-export const Spinner = styled(LoaderCircle)`
-	animation: ${rotate} 5s linear infinite;
-	color: darkgoldenrod;
-
-	width: 3rem;
-	height: 3rem;
-`;
 
 export const Container = styled.span`
 	position: absolute;
 	top: 50%;
 	left: 50%;
+`;
+
+const dash = keyframes`
+ 0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 35;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: 135;
+  }
+`;
+export const Svg = styled.svg.attrs({
+	xmlns: 'http://www.w3.org/2000/svg',
+	xmlnsXlink: 'http://www.w3.org/1999/xlink',
+	xmlSpace: 'preserve',
+	version: '1.1',
+	baseProfile: 'tiny',
+	x: '0px',
+	y: '0px',
+	viewBox: '0 0 24 24',
+})`
+	width: 24px;
+	height: 24px;
+`;
+export const Circle = styled.circle.attrs({ cx: '12', cy: '12', r: '10' })`
+	fill: none;
+	stroke-linecap: round;
+	stroke-width: 2;
+	stroke: #29b6f6;
+	animation: ${dash} 1.5s ease-in-out infinite;
 `;
